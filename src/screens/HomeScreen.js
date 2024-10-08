@@ -1,14 +1,22 @@
-import React from 'react';
-import {Text, View, Image} from 'react-native';
+import { View, Button} from 'react-native';
+import styles from './Styles';
 
-const HomeScreen = () => {
+
+
+
+
+const Home = ({ navigation, route }) => {
+  const deslogar = () => {
+    route.params.funcLogar(false);
+    navigation.replace("Login");
+  };
+
   return (
-    <View>
-      <Text></Text>
-      {/* Exibindo a logo do app */}
-      <Image source={require('./assets/images/logo.png')}/>
+    <View style={styles.container}>
+      
+      <Button  title="Logout" onPress={deslogar} />
     </View>
   );
 };
 
-export default HomeScreen;
+export default Home;
