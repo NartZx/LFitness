@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Button, Text,TextInput} from 'react-native';
+import { View, Pressable, Text,TextInput} from 'react-native';
 import styles from './Styles.js';
 
 
@@ -8,7 +8,7 @@ const Login = ({ route }) => {
    const[senha,setSenha]=useState("");
   return (
     
-    <View component= {styles} style={styles.container} >
+    <View style={styles.container} >
       <Text style={{paddingVertical:5}}>Usuario:</Text>
       <TextInput style={styles.forminput}
        placeholder="Coloque seu nome de usario"
@@ -25,7 +25,9 @@ const Login = ({ route }) => {
        onChangeText={newSenha=>setSenha(newSenha)}
        defaultValue={senha}/>
       <Text> </Text>
-      <Button  onPress={() => route.params.funcLogar(true)} title='Logar' />
+      <Pressable style={styles.formbutton} onPress={() => route.params.funcLogar(true)}> 
+         <Text>Logar</Text>
+         </Pressable>
      
     </View>
   );
