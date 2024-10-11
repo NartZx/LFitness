@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, Pressable, Text,TextInput} from 'react-native';
-import styles from './Styles.js';
+import styles from '../../Styles';
 
 
 const Login = ({ route }) => {

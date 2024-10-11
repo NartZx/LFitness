@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import Login from './Login';
-import Home from './Home';
-import Consulta from './Consulta';
-import AvalicaoFisica from './AvaliacaoFisica';
-import Aluno from './Aluno';
+import Login from './src/screens/LoginScreen';
+import Home from './src/screens/HomeScreen';
+import Consulta from './src/screens/Consultancy';
+import AvalicaoFisica from './src/screens/Assessment';
+import Aluno from './src/screens/StudentScreen';
 
 const Stack = createStackNavigator();
 
