@@ -19,10 +19,12 @@ const styles = StyleSheet.create({
                margin:10,
                padding:10,
                borderRadius:10,
-               alignItems:'center',  }           
+               alignItems:'center',  },          
+   subcontainer:{flexDirection:'row',
+                 justifyContent:'space-between',
+                 width:'80%'},
 
-
-
+     subbutton:{padding:10,}
 
 
 });

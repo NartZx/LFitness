@@ -6,6 +6,8 @@ import Home from './src/screens/HomeScreen';
 import Consulta from './src/screens/Consultancy';
 import AvalicaoFisica from './src/screens/Assessment';
 import Aluno from './src/screens/StudentScreen';
+import EsqueciSenha from './src/screens/ForgetPassword';
+import NovoUsuario from './src/screens/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +36,8 @@ export default function Routes(){
       ) : (
         <Stack.Navigator>
           <Stack.Screen name="Login" component={Login} initialParams={{ funcLogar: setLogado }} />
-          
+          <Stack.Screen name="Esqueci Senha" component={EsqueciSenha} options={{ headerShown: true }}/>
+          <Stack.Screen name="Novo Usuario" component={NovoUsuario} options={{ headerShown: true }} />
         </Stack.Navigator>
       )}
       

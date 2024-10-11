@@ -3,7 +3,8 @@ import { View, Pressable, Text,TextInput} from 'react-native';
 import styles from '../../Styles';
 
 
-const Login = ({ route }) => {
+
+const Login = ({ navigation,route }) => {
    const[text,setText]=useState("");
    const[senha,setSenha]=useState("");
   return (
@@ -11,7 +12,7 @@ const Login = ({ route }) => {
     <View style={styles.container} >
       <Text style={{paddingVertical:5}}>Usuario:</Text>
       <TextInput style={styles.forminput}
-       placeholder="Coloque seu nome de usario"
+       placeholder="Coloque seu E-Mail"
        keyboardType="email-address"
        autoCapitalize="none"
        autoComplete="email"
@@ -29,7 +30,16 @@ const Login = ({ route }) => {
          <Text>Logar</Text>
          </Pressable>
      
-    </View>
+    
+      <View style={styles.subcontainer}>
+      <Pressable style={styles.subbutton} onPress={() => navigation.push("Esqueci Senha")}> 
+         <Text style={styles.subText}>{'Esqueci Senha'}</Text>
+         </Pressable>   
+      <Pressable style={styles.subbutton} onPress={() => navigation.push("Novo Usuario")}> 
+         <Text style={styles.subText}>{'Novo Usuario'}</Text>
+         </Pressable>
+         </View>
+      </View>  
   );
 };
 
