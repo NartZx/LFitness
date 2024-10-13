@@ -35,20 +35,22 @@ const styles = StyleSheet.create({
             textTransform:'uppercase',
             marginVertical:10,
             marginLeft:12},
+    
     optionsC:{flexDirection:'row',
              alignItems:'center'},
+    
     optext:{marginLeft:12,
             color:'#555',
             fontSize:16,
-            fontWeight:'600'},
+            fontWeight:'600',
+            padding:20},
 
-    touchabaleC:{height:20,
-                 width:20,
+    touchabaleC:{height:29,
+                 width:28,
                  borderRadius:4,
                  justifyContent:'center',
                  alignItems:'center',
-                 borderColor:'3EBD93',
-                 borderWidth:2},        
+                 borderWidth:2,},        
 });
 
 export default styles;
