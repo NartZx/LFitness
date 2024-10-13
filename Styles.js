@@ -24,9 +24,31 @@ const styles = StyleSheet.create({
                  justifyContent:'space-between',
                  width:'80%'},
 
-     subbutton:{padding:10,}
+    subbutton:{padding:10,},
+     
+    safearea:{flex: 1,
+             backgroundColor:'#fefefe'},
+      
+    titleC:{color:'333',
+            size:16,
+            fontWeight:'700',
+            textTransform:'uppercase',
+            marginVertical:10,
+            marginLeft:12},
+    optionsC:{flexDirection:'row',
+             alignItems:'center'},
+    optext:{marginLeft:12,
+            color:'#555',
+            fontSize:16,
+            fontWeight:'600'},
 
-
+    touchabaleC:{height:20,
+                 width:20,
+                 borderRadius:4,
+                 justifyContent:'center',
+                 alignItems:'center',
+                 borderColor:'3EBD93',
+                 borderWidth:2},        
 });
 
 export default styles;
