@@ -14,13 +14,16 @@ const Home = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <Pressable style={styles.formbutton} onPress={() => navigation.push("Consulta")}>
-        <Text>Consulta</Text> 
+        <Text style={{fontWeight:'700',textTransform:'uppercase'}}>Consulta</Text> 
         </Pressable>
+       <Pressable style={styles.formbutton} onPress={() => navigation.push("Exercicios")}>
+        <Text style={{fontWeight:'700',textTransform:'uppercase'}}>Exercicios</Text> 
+        </Pressable>  
       <Pressable style={styles.formbutton} onPress={() => navigation.push("Avaliação Fisica")}>
-        <Text>{'Avalição Fisica'}</Text> 
+        <Text style={{fontWeight:'700',textTransform:'uppercase'}}>{'Avalição Fisica'}</Text> 
         </Pressable> 
       <Pressable style={styles.formbutton} onPress={() => navigation.push("Aluno")}>
-        <Text>Aluno</Text> 
+        <Text style={{fontWeight:'700',textTransform:'uppercase'}}>Aluno</Text> 
         </Pressable>     
       <Pressable  style={styles.formbutton} onPress={deslogar}> 
          <Text>Logout</Text>

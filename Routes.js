@@ -5,6 +5,7 @@ import Login from './src/screens/LoginScreen';
 import Home from './src/screens/HomeScreen';
 import Consulta from './src/screens/Consultancy';
 import AvalicaoFisica from './src/screens/Assessment';
+import Exercicio from './src/screens/Exercicio';
 import Aluno from './src/screens/StudentScreen';
 import EsqueciSenha from './src/screens/ForgetPassword';
 import NovoUsuario from './src/screens/RegisterScreen';
@@ -21,6 +22,7 @@ export default function Routes(){
               
                     <Stack.Navigator >
                       <Stack.Screen  name="Home" options={{ headerShown: true }} component={Home} initialParams={{ funcLogar: setLogado }} />
+                      <Stack.Screen name="Exercicios" component={Exercicio} options={{headerShown: true}} />
                       <Stack.Screen name="Consulta" component={Consulta} options={{headerShown: true}} />
                       <Stack.Screen name="Avaliação Fisica" component={AvalicaoFisica} options={{headerShown: true}} />
                       <Stack.Screen name="Aluno" component={Aluno} options={{headerShown: true}} />
