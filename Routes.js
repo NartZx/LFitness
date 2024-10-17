@@ -9,12 +9,25 @@ import Exercicio from './src/screens/Exercicio';
 import Aluno from './src/screens/StudentScreen';
 import EsqueciSenha from './src/screens/ForgetPassword';
 import NovoUsuario from './src/screens/RegisterScreen';
+import TreinonaAcademia from './src/screens/Academia';
+import TreinoemCasa from './src/screens/CasaScreen';
 
 const Stack = createStackNavigator();
 
 export default function Routes(){
     const [EstaLogado, setLogado] = useState(false);
+    function Consulta(){
+    return(
+    <Stack.Navigator>
+    
+    <Stack.Screen name="Treino em Casa" component={TreinoemCasa} options={{headerShown: true}} />
+    <Stack.Screen name="Treino na Academia" component={TreinonaAcademia} options={{headerShown: true}} />
+   
+   </Stack.Navigator>
 
+    );
+
+    }
   return (
      <NavigationContainer>
       {EstaLogado ? (
@@ -26,6 +39,7 @@ export default function Routes(){
                       <Stack.Screen name="Consulta" component={Consulta} options={{headerShown: true}} />
                       <Stack.Screen name="Avaliação Fisica" component={AvalicaoFisica} options={{headerShown: true}} />
                       <Stack.Screen name="Aluno" component={Aluno} options={{headerShown: true}} />
+                      
                     </Stack.Navigator>
                   
              
@@ -42,6 +56,8 @@ export default function Routes(){
           <Stack.Screen name="Novo Usuario" component={NovoUsuario} options={{ headerShown: true }} />
         </Stack.Navigator>
       )}
+     
+      
       
      </NavigationContainer> 
   );
