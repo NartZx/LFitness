@@ -14,6 +14,7 @@ import HomeTraining from './HomeTraining';
 import OnlineConsulting from './OnlineConsulting';
 import PhysicalAssessment from './PhysicalAssessment';
 import Student from './Student';
+import Settings from './settings'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,10 +54,11 @@ export default function Routes(){
   
                   return(   
                     <Stack.Navigator >
-                      <Stack.Screen  name="Home" options={{ headerShown: true }} component={Home} initialParams={{ funcLogar: setLogado }} />
-                      <Stack.Screen name="Consulta" component={Consulta} options={{headerShown: true}} />
-                      <Stack.Screen name="Avaliação Fisica" component={AvalicaoFisica} options={{headerShown: true}} />
-                      <Stack.Screen name="Aluno" component={Aluno} options={{headerShown: true}} />
+                      <Stack.Screen  name="Home" options={{ headerShown: false, headerTransparent: true, headerTitle: "" }} component={Home} initialParams={{ funcLogar: setLogado }} />
+                      <Stack.Screen name="Consulta" component={Consulta} options={{headerShown: true,headerTitle: "",headerTransparent:true}} />
+                      <Stack.Screen name="Avaliação Fisica" component={AvalicaoFisica} options={{headerShown: true,headerTitle: "",headerTransparent: true}} />
+                      <Stack.Screen name="Aluno" component={Aluno} options={{headerShown: true,headerTitle: ""}} />
+                      <Stack.Screen name="Configuração" component={Settings} options={{headerShown: true,headerTitle: ""}} />
                     </Stack.Navigator>
                   );
                   }} />    

@@ -7,6 +7,10 @@ export default function Header({ navigation, onToggleTheme, isHighContrast }) {
   const goToLogin = () => {
     navigation.navigate('Login');
   };
+   
+   const goToSettings = () =>{
+      navigation.navigate('Configuração');
+   };
 
   return (
     <View style={[styles.header, isHighContrast ? styles.highContrast : styles.default]}>
@@ -14,7 +18,7 @@ export default function Header({ navigation, onToggleTheme, isHighContrast }) {
         <Ionicons name="menu" size={32} color={isHighContrast ? '#fff' : '#000'}/>
       </TouchableOpacity>
 
-    <TouchableOpacity>
+    <TouchableOpacity  onPress={goToSettings}>
       <Ionicons name='settings-outline' size={32} color={isHighContrast ? '#fff' : '#000'}/>
     </TouchableOpacity>
 
