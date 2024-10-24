@@ -4,6 +4,13 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Firebase from '../firebaseConfig';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
+import * as ImagePicker from 'expo-image-picker';
+
+
+
+
+
 const Register = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -63,6 +70,24 @@ const Register = ({ navigation }) => {
     }
   };
 
+  
+  
+  const [image, setImage] = useState('');
+
+  const handdleImagePicker = async () =>{
+   const result = await ImagePicker.launchImageLibraryAsync({
+      aspect:[4,4],
+      allowsEditing: true,
+      base64: true,
+      quality:1,
+    });
+
+    if(!result.canceled){
+      setImage(result.assets[0].uri)
+    }
+  };
+
+
   return (
     <View style={styles.container}>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
@@ -71,6 +96,14 @@ const Register = ({ navigation }) => {
         <ActivityIndicator size="large" color="#3498db" />
       ) : (
         <>
+          <Pressable onPress={handdleImagePicker}>
+            <Text>Escolha sua Foto</Text> 
+          </Pressable>
+          
+          <Image source={{uri: image}} style={{width:100,height:100,borderRadius:50}} />
+           
+
+
           <Text style={styles.label}>Email:</Text>
           <TextInput
             style={styles.formInput}

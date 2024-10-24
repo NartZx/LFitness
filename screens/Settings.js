@@ -1,36 +1,20 @@
 import React from 'react';
-import { Text,View,StyleSheet,Pressable } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Text,View,StyleSheet,Switch} from 'react-native';
 import {useState} from 'react';
 
 const Config = () => {
  const [change1,setchange1] = useState(false);
  const [change2,setchange2] = useState(false);
 
+
  return(
    <View style={styles.container}>
     <View style={styles.content}>
      <Text style={styles.title}>Configurações </Text>
-    <Text style={{fontSize:15,fontWeight:'bold'}}>Alterar o tamanho da fonte (Grande ou Pequeno) </Text>
-    {change1 ?(
-      <Pressable onPress={() => setchange1(!change1)}>
-       <MaterialCommunityIcons name="toggle-switch" size={50} color="black"  />
-      </Pressable>
-    ) : (  
-      <Pressable  onPress={() => setchange1(!change1)}>
-       <MaterialCommunityIcons name="toggle-switch-off" size={50} color="black"  />
-      </Pressable>
-    )}
-    <Text style={{fontSize:15,fontWeight:'bold'}}>Alterar tipo de visualização (Light ou Dark) </Text> 
-    {change2 ?(
-      <Pressable onPress={() => setchange2(!change2)}>
-       <MaterialCommunityIcons name="toggle-switch" size={50} color="black"  />
-      </Pressable>
-    ) : (
-      <Pressable  onPress={() => setchange2(!change2)}>
-       <MaterialCommunityIcons name="toggle-switch-off" size={50} color="black"  />
-      </Pressable>
-    )}
+    <Text style={{fontSize:15,fontWeight:'bold',paddingBottom:18}}>Alterar o tamanho da fonte (Grande ou Pequeno) </Text>
+    <Switch value={change1} onValueChange={setchange1} style={{transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }]}}/>
+    <Text style={{fontSize:15,fontWeight:'bold',paddingBottom:18,paddingTop:15}}>Alterar tipo de visualização (Light ou Dark) </Text> 
+    <Switch value={change2} onValueChange={setchange2} style={{transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }]}}/>
     </View>
    </View>
  ); 
